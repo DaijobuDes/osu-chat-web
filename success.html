@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="styles.css" rel="stylesheet">
+    <script type="module" src="app.js"></script>
+    <title>Document</title>
+</head>
+
+<body x-data="success" class="bg-gray-100 flex items-center justify-center min-h-screen">
+    <div x-show="error">
+        <div class="w-full max-w-sm p-6 bg-white rounded-2xl shadow-lg">
+            <h2 class="text-2xl font-bold text-center text-red-500 mb-6">Authentication Failed</h2>
+            <p class="text-sm text-center text-gray-600 mb-4">
+                We couldn't authenticate your request. You either denied the request or something went wrong.
+                Please try again later.
+            </p>
+            <p class="text-sm text-center text-gray-600 mb-4" x-text="error_reason"></p>
+            <div class="text-center space-y-4">
+                <a href="/"
+                    class="w-full block py-2 px-4 bg-blue-500 text-white font-medium rounded-lg hover:bg-blue-600 focus:outline-none focus:ring focus:ring-blue-300">
+                    Go Back to Authentication
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
