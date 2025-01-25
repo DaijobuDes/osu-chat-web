@@ -1,0 +1,28 @@
+{
+  "name": "osu-chat-web",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DaijobuDes/osu-chat-web.git"
+  },
+  "author": "Kate Aubrey Cellan",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/DaijobuDes/osu-chat-web/issues"
+  },
+  "homepage": "https://github.com/DaijobuDes/osu-chat-web#readme",
+  "dependencies": {
+    "@tailwindcss/vite": "^4.0.0",
+    "alpinejs": "^3.14.8",
+    "tailwindcss": "^4.0.0",
+    "vite": "^6.0.11"
+  }
+}
