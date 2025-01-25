@@ -5,11 +5,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="styles.css" rel="stylesheet">
+    <script type="module" src="app.js"></script>
     <title>Document</title>
 </head>
 
-<body>
-    <h1 class="text-3xl font-bold underline">Hello world!</h1>
+<body x-data="index" class="bg-gray-100 flex items-center justify-center min-h-screen">
+    <div class="w-full max-w-sm p-6 bg-white rounded-2xl shadow-lg">
+        <h2 class="text-2xl font-bold text-center text-gray-700 mb-6">OAuth Authentication</h2>
+        <p class="text-sm text-center text-gray-600 mb-4">
+            To proceed, please authenticate first.
+        </p>
+        <form class="space-y-4 text-center">
+            <button type="submit"
+                class="w-full py-2 px-4 bg-blue-500 text-white font-medium rounded-lg hover:bg-blue-600 focus:outline-none focus:ring focus:ring-blue-300">
+                <a :href="oauth_url" x>Authenticate here first</a>
+            </button>
+        </form>
+    </div>
 </body>
 
 </html>
