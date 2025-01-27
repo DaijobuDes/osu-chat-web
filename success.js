@@ -2,7 +2,6 @@ import Alpine from "alpinejs";
 import { set_item } from "./helpers/session";
 
 window.Alpine = Alpine;
-const env = import.meta.env;
 
 Alpine.data('success', () => ({
     code: null,
@@ -10,7 +9,6 @@ Alpine.data('success', () => ({
     error_reason: null,
 
     init() {
-        console.log('asdasdasd');
         const urlParams = new URLSearchParams(window.location.search);
         const code = urlParams.get('code');
         if (code == null) {
