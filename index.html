@@ -16,10 +16,10 @@
             To proceed, please authenticate first.
         </p>
         <form class="space-y-4 text-center">
-            <button type="submit"
-                class="w-full py-2 px-4 bg-blue-500 text-white font-medium rounded-lg hover:bg-blue-600 focus:outline-none focus:ring focus:ring-blue-300">
-                <a :href="oauth_url" x>Authenticate here first</a>
-            </button>
+            <a type="submit" :href="oauth_url"
+                class="w-full block text-center py-2 px-4 bg-blue-500 text-white font-medium rounded-lg hover:bg-blue-600 focus:outline-none focus:ring focus:ring-blue-300">
+                Authenticate here first
+            </a>
         </form>
     </div>
 </body>
