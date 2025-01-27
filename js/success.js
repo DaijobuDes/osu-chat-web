@@ -1,5 +1,5 @@
 import Alpine from "alpinejs";
-import { set_item } from "./helpers/session";
+import { set_item } from "../helpers/session";
 
 window.Alpine = Alpine;
 

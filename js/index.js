@@ -1,5 +1,5 @@
 import Alpine from "alpinejs";
-import { get_item } from "./helpers/session";
+import { get_item } from "../helpers/session";
 
 window.Alpine = Alpine;
 const env = import.meta.env;
