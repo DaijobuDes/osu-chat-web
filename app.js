@@ -1,7 +1,7 @@
-import './index.js';
-import './success.js';
-import './home.js';
-import './logout.js';
+import './js/index.js';
+import './js/success.js';
+import './js/home.js';
+import './js/logout.js';
 
 Alpine.start();
 
