@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/styles.css" rel="stylesheet">
+    <script type="module" src="app.js"></script>
+    <title>Chat UI</title>
+</head>
+
+<body x-data="home" class="h-screen flex flex-col">
+    <!-- Navbar -->
+    <nav class="bg-gray-800 text-white p-4 flex justify-between items-center">
+        <div class="flex items-center space-x-3">
+            <img :src="avatar" class="w-10 h-10 rounded-full" alt="User Image">
+            <span class="text-lg font-semibold" x-text="username"></span>
+        </div>
+        <button class="bg-red-500 px-4 py-2 rounded-lg cursor-pointer" x-on:click="logout">Logout</button>
+    </nav>
+
+    <div class="flex flex-1 overflow-hidden">
+        <!-- Sidebar (Chat Channels/Users) -->
+        <aside class="w-1/5 bg-gray-100 p-4 overflow-y-auto">
+            <h2 class="text-lg font-semibold mb-3">Chats</h2>
+            <ul class="space-y-2">
+                <li class="p-2 bg-gray-200 rounded cursor-pointer">User 1</li>
+                <li class="p-2 bg-gray-200 rounded cursor-pointer">User 2</li>
+                <li class="p-2 bg-gray-200 rounded cursor-pointer">User 3</li>
+            </ul>
+        </aside>
+
+        <!-- Chat Interface -->
+        <main class="w-4/5 flex flex-col bg-white">
+            <div class="flex-1 p-4 overflow-y-auto bg-gray-50">
+                <div class="mb-4">
+                    <p class="bg-blue-500 text-white p-2 rounded-lg inline-block">Hello!</p>
+                </div>
+                <div class="mb-4 text-right">
+                    <p class="bg-gray-300 p-2 rounded-lg inline-block">Hi, how are you?</p>
+                </div>
+            </div>
+
+            <!-- Chat Input -->
+            <div class="p-4 bg-gray-200 flex">
+                <input type="text" class="flex-1 p-2 rounded-lg border border-gray-300" placeholder="Type a message...">
+                <button class="ml-2 bg-blue-500 text-white px-4 py-2 rounded-lg">Send</button>
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>
