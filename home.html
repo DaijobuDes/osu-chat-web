@@ -25,8 +25,8 @@
             <h2 class="text-lg font-semibold mb-3">Chats</h2>
             <ul class="space-y-2">
                 <template x-for="channel in channels">
-                    <li class="p-2 bg-gray-200 rounded cursor-pointer" x-text="channel.name"
-                        :value="channel.channel_id"></li>
+                    <li class="p-2 bg-gray-200 rounded cursor-pointer" x-text="channel.name" :value="channel.channel_id"
+                        x-on:click="get_channel_messages(channel.channel_id)"></li>
                 </template>
             </ul>
         </aside>
@@ -34,11 +34,17 @@
         <!-- Chat Interface -->
         <main class="w-4/5 flex flex-col bg-white">
             <div class="flex-1 p-4 overflow-y-auto bg-gray-50">
-                <div class="mb-4">
-                    <p class="bg-blue-500 text-white p-2 rounded-lg inline-block">Hello!</p>
-                </div>
+                <template x-for="message in messages">
+                    <div class="mb-4 flex flex-col items-start">
+                        <img :src="message.sender.avatar_url" class="w-8 h-8 rounded-full" alt="User Image">
+                        <span class="text-xs text-gray-600 block" x-text="message.sender.username"></span>
+                        <p class="bg-gray-300 p-2 rounded-lg inline-block mt-2" x-text="message.content"></p>
+                        <span class="text-xs text-gray-600 block" x-text="message.timestamp"></span>
+                    </div>
+                </template>
                 <div class="mb-4 text-right">
-                    <p class="bg-gray-300 p-2 rounded-lg inline-block">Hi, how are you?</p>
+                    <!-- <p class="bg-blue-500 text-white p-2 rounded-lg inline-block">Hello!</p> -->
+                    <!-- <p class="bg-gray-300 p-2 rounded-lg inline-block">Hi, how are you?</p> -->
                 </div>
             </div>
 

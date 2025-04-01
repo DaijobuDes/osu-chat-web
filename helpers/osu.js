@@ -52,6 +52,19 @@ export class Osu {
         }
     }
 
+    async get_channel_messages(channel_id, since = 0) {
+        try {
+            const params = {
+                'since': since,
+            };
+            const final_url = endpoint.GET_CHANNEL_MESSAGES.replace(':channel_id', channel_id);
+            const response = await axios.get(final_url, { params: params, headers: this.headers });
+            return response;
+        } catch (error) {
+            return error;
+        }
+    }
+
     async revoke_own_token() {
         try {
             const response = await axios.delete(endpoint.REVOKE_OAUTH_TOKEN, { headers: this.headers })
@@ -64,6 +77,7 @@ export class Osu {
 
 const endpoint = Object.freeze({
     GET_CHANNEL_LIST: HOSTNAME + '/api/v2/chat/channels',
+    GET_CHANNEL_MESSAGES: HOSTNAME + '/api/v2/chat/channels/:channel_id/messages',
     GET_OWN_USER_DATA: HOSTNAME + '/api/v2/me/osu',
     GET_OAUTH_TOKEN: HOSTNAME + '/oauth/token',
     REVOKE_OAUTH_TOKEN: HOSTNAME + '/api/v2/oauth/tokens/current',

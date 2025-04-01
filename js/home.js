@@ -7,7 +7,9 @@ window.Alpine = Alpine;
 Alpine.data('home', () => ({
     avatar: "https://a.ppy.sh/1",
     channels: [],
+    messages: [],
     username: "",
+    timer: null,
     osu: new Osu(),
 
     async init() {
@@ -41,6 +43,38 @@ Alpine.data('home', () => ({
         }
 
         this.channels = response.data;
+    },
+
+    async get_channel_messages(channel_id) {
+
+        if (this.timer !== null) {
+            clearInterval(this.timer);
+        }
+
+        this.timer = setInterval(async () => {
+
+            const response = await this.osu.get_channel_messages(channel_id);
+
+            if (response.status !== 200) {
+                clearInterval(this.timer);
+                alert('Cannot retrieve messages.');
+                return;
+            }
+
+            this.messages = response.data.map(msg => ({
+                ...msg,
+                timestamp: new Date(msg.timestamp).toLocaleString('en-GB', {
+                    year: 'numeric',
+                    month: '2-digit',
+                    day: '2-digit',
+                    hour: '2-digit',
+                    minute: '2-digit',
+                    second: '2-digit',
+                    hour12: false
+                }).replace(',', '') // Ensure proper spacing
+            }));
+
+        }, 1000);
     },
 
     async logout() {
