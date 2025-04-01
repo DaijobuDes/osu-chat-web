@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/DaijobuDes/osu-chat-web#readme",
   "dependencies": {
-    "@tailwindcss/vite": "^4.0.0",
+    "@tailwindcss/vite": "^4.0.17",
     "alpinejs": "^3.14.8",
     "axios": "^1.8.4",
     "tailwindcss": "^4.0.17",
