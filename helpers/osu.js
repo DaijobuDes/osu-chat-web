@@ -43,6 +43,15 @@ export class Osu {
         }
     }
 
+    async get_channel_list() {
+        try {
+            const response = await axios.get(endpoint.GET_CHANNEL_LIST, { headers: this.headers });
+            return response;
+        } catch (error) {
+            return error;
+        }
+    }
+
     async revoke_own_token() {
         try {
             const response = await axios.delete(endpoint.REVOKE_OAUTH_TOKEN, { headers: this.headers })
@@ -54,6 +63,7 @@ export class Osu {
 }
 
 const endpoint = Object.freeze({
+    GET_CHANNEL_LIST: HOSTNAME + '/api/v2/chat/channels',
     GET_OWN_USER_DATA: HOSTNAME + '/api/v2/me/osu',
     GET_OAUTH_TOKEN: HOSTNAME + '/oauth/token',
     REVOKE_OAUTH_TOKEN: HOSTNAME + '/api/v2/oauth/tokens/current',

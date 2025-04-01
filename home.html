@@ -24,9 +24,10 @@
         <aside class="w-1/5 bg-gray-100 p-4 overflow-y-auto">
             <h2 class="text-lg font-semibold mb-3">Chats</h2>
             <ul class="space-y-2">
-                <li class="p-2 bg-gray-200 rounded cursor-pointer">User 1</li>
-                <li class="p-2 bg-gray-200 rounded cursor-pointer">User 2</li>
-                <li class="p-2 bg-gray-200 rounded cursor-pointer">User 3</li>
+                <template x-for="channel in channels">
+                    <li class="p-2 bg-gray-200 rounded cursor-pointer" x-text="channel.name"
+                        :value="channel.channel_id"></li>
+                </template>
             </ul>
         </aside>
 
