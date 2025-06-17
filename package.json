@@ -22,7 +22,7 @@
   "dependencies": {
     "@tailwindcss/vite": "^4.1.10",
     "alpinejs": "^3.14.9",
-    "axios": "^1.9.0",
+    "axios": "^1.10.0",
     "tailwindcss": "^4.1.8",
     "vite": "^6.3.5"
   }
